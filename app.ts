@@ -1,5 +1,6 @@
 console.log("Hello")
 
+//변수의 타입 명시 방법법
 let a:number = 10; //number
 let b:string= "Hello"; // 문자열,string
 let c:boolean= true; //boolean
@@ -35,7 +36,6 @@ let columnLength = 10; //길이를 number로 지정,number로 지정정
 //.. 개발 진행 과정
 //.. 개발 진행 과정
 
-
 columnLength = 30;
 //.. 개발 진행 과정
 //.. 개발 진행 과정
@@ -50,5 +50,12 @@ let meterLength = addLength /10;
 //.. 개발 진행 과정
 //.. 개발 진행 과정
 //.. 개발 진행 과정
-console.log(addLength)
-console.log(meterLength)
+console.log(addLength + "m")
+console.log(meterLength + "m")
+
+
+//-------------------
+//메서드의 타입 명시 방법법(파라미터와 메서드를 명시해준다다)
+function add(x:number ,y:number):number {
+    return x + y;
+}

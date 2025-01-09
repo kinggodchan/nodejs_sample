@@ -6,6 +6,8 @@ class Robot { //Members
     status: string = "Active";
 
     //Constructor(생성자)
+    //생성자는 필수적인 요소이다.
+    //this는 robot이다
     constructor(name: string, model: string) {
         this.name = name;
         this.model = model;
@@ -38,3 +40,17 @@ console.log(r3.status);
 r1.performTask("Charging");
 r1.performTask("Explorering");
 r1.updateStatus("On Repair");
+
+
+//No-args Constructor
+class Pet{
+    category: string = "Cat";
+    name: string = "Chu";
+
+    //기본 생성자
+    //작성 안해도 52번이 있다.
+    //constructor() {}
+}
+
+let p1 = new Pet();
+console.log(p1.name);

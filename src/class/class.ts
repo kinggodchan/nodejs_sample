@@ -86,3 +86,59 @@ console.log(user2.username); //출력: 김철수
 //3.메서드 호출
 user1.study();
 user2.study();
+
+//클래스의 상속
+class CleaningRobot {
+    name: string;
+    model: string;
+    cleaningSchedule: string[];
+    status: string = "Active";
+    
+    // Constructor(생성자)
+    constructor(name: string, model: string, cleaningSchedule: string[]) {
+        this.name = name;
+        this.model = model;
+        this.cleaningSchedule = cleaningSchedule;
+    }
+
+    // Method(행동)
+    performTask(task: string) {
+        console.log(`${this.name} is performing ${task}.`);
+    }
+    updateStatus(newStatus: string) {
+        this.status = newStatus;
+        console.log(`${this.name}'s status is now ${this.status}.`);
+    }
+
+    performCleaning() {
+        console.log(`${this.name} is cleaning according to the schedule: ${this.cleaningSchedule.join(", ")}.`);
+    }
+}
+
+class CookingRobot {
+    // Field(Property) 속성
+    name: string;
+    model: string;
+    availableMenus: string[];
+    status: string = "Active";
+    
+    // Constructor(생성자)
+    constructor(name: string, model: string, availableMenus: string[]) {
+        this.name = name;
+        this.model = model;
+        this.availableMenus = availableMenus;
+    }
+
+    // Method(행동)
+    performTask(task: string) {
+        console.log(`${this.name} is performing ${task}.`);
+    }
+    updateStatus(newStatus: string) {
+        this.status = newStatus;
+        console.log(`${this.name}'s status is now ${this.status}.`);
+    }
+
+    performCooking() {
+        console.log(`${this.name} is cooking according the menus: ${this.availableMenus.join(", ")}.`);
+    }
+}

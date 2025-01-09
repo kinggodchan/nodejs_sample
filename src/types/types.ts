@@ -58,7 +58,7 @@ function printOutput(pt: {x: number, y:number}) {
 
 //객체의 선택적 속성 지정 방법
 function printName(user: { first: string, last?:string}) {
-    if(user.last! == undefined) {
+    if(user.last !== undefined) {
         console.log("Your First name is" + user.first.toUpperCase());
         console.log("Your Last name is " + user.last.toUpperCase());
     }else {
@@ -66,4 +66,14 @@ function printName(user: { first: string, last?:string}) {
     }
 }
 
-printName({first: "Bob", last: "chris"});
+printName({first: "Bob"});
+//printName({first: "Bob", last: "chris"}); , last가 없는데도 ide 오류가 안타나남
+
+//Any 타입
+let object: any = {x:0};
+
+object.foo();
+object();
+object.bar = 100;
+object = "hello";
+const n: number = object;

@@ -77,3 +77,17 @@ object();
 object.bar = 100;
 object = "hello";
 const n: number = object;
+
+//union 타입
+function printId(id: number| string) {
+    //console.log(id.toUpperCase());
+    if (typeof id === "string") {
+        // In this branch, id is of type 'string'
+        console.log(id.toUpperCase());
+      } else {
+        // Here, id is of type 'number'
+        console.log(typeof id); //number
+      }
+  }
+  printId(10);
+  printId("Hello");

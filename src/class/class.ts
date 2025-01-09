@@ -1,9 +1,9 @@
 //class 이용
 class Robot { //Members
     //Property 또는 Field(속성, 필드)
-    name:string;
-    model: string;
-    status: string = "Active"; // 기본값 Default 값을 설정할 수 있다.
+    private name:string;
+    private model: string;
+    protected status: string = "Active"; // 기본값 Default 값을 설정할 수 있다.
 
     //Constructor(생성자)
     //생성자는 필수적인 요소이다.
@@ -12,6 +12,21 @@ class Robot { //Members
         this.name = name; 
         this.model = model;
     }
+
+    //Getter for name
+    public getName():string {
+        return this.name;
+    }
+
+    public getModel():string {
+        return this.model;
+    }
+
+
+    public getStatus():string {
+        return this.status;
+    }
+
 
     //Method(행동)
     performTask(task: string) {
@@ -33,9 +48,9 @@ let r2 = new Robot("R2-k2","sam sung")
 let r3 = new Robot("R2-k3","lg")
 
 //Accessing fields and Calling methods
-console.log(r1.name);
-console.log(r2.model);
-console.log(r3.status);
+console.log(r1.getName);
+console.log(r2.getModel);
+console.log(r3.getStatus);
 
 r1.performTask("Charging");
 r1.performTask("Explorering");
@@ -101,7 +116,7 @@ class CleaningRobot extends Robot {
     // Method(행동)  //overrid는 재정의, 오버로드는 전혀 다른 메서드가 나타나는것
    // override performTask() {
     performTask() {
-        console.log(`${this.name} is cleaning according to the schedule: ${this.cleaningSchedule.join(", ")}.`);
+        console.log(`${this.getName} is cleaning according to the schedule: ${this.cleaningSchedule.join(", ")}.`);
     }
 }
 
@@ -132,3 +147,16 @@ class CookingRobot {
         console.log(`${this.name} is cooking according the menus: ${this.availableMenus.join(", ")}.`);
     }
 }
+
+
+//접근 제어자 Visibility modifier / Access Modifier
+//public - protected -  private
+//(default), 생략되어있는것
+//public: 모든 클래스에서 접근 가능(기본값)
+//protected : 같은 클래스와 자식 클래스에서 접근 가능
+//private : 해당 클래스 내에서만 접근 가능
+
+let c1 = new CleaningRobot("ABC-1","Prime",["Sun","Mon"])
+console.log(c1.cleaningSchedule);
+c1.performTask();
+console.log(c1.getName());

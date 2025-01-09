@@ -149,24 +149,24 @@ interface Point {
 //console.log(bear.honey)
 
 // Type Alias의 확장 예시
-type Aniaml = {
-  name: string;
-}
+//type Aniaml = {
+//  name: string;
+//}
 
-type Aniaml = {
-  honey: boolean;
-}
+//type Aniaml = {
+//  honey: boolean;
+//}
 
-function getBear():Bear {
-  return {
-    name: "Grizzly",
-    honey: true,
-  };
-}
+//function getBear():Bear {
+//  return {
+//    name: "Grizzly",
+//    honey: true,
+//  };
+//}
 
-const bear = getBear();
-console.log(bear.name) //from animal
-console.log(bear.honey)
+//const bear = getBear();
+//console.log(bear.name) //from animal
+//console.log(bear.honey)
 
 
 //인터페이스 병합의 차이점
@@ -174,14 +174,14 @@ console.log(bear.honey)
 interface Job {
   title: string;
 }
-interface Job {
+interface Job { //type으로 변경하면 중복 코드 오류가 발생
   company: string;
 }
 
 const myJob: Job = {
-  title: "Software Engineer",
-  company: "Tech Corp"
+  title: "Sw Engineer",
+  company: "Tech"
 };
 
-console.log(myJob.title);  // "Software Engineer"
-console.log(myJob.company); // "Tech Corp"
+console.log(myJob.title); 
+console.log(myJob.company);

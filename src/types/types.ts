@@ -210,3 +210,11 @@ const content2 = <Content>apiResponse;
 //console.log(content1.like);  //like does not exist
 console.log(content2.id); //ok
 console.log(content2.title); //ok
+
+//리터럴 타입 
+function printText( s: string,  alignment: "left" | "right" | "center" ) {
+
+}
+printText("Hello, world", "left");
+//printText("Hello, world", "centre"); // 특정 값을 타입화 하는 것이지만, 재사용성이 떨어져 다음으로 대체한다.
+

@@ -88,29 +88,19 @@ user1.study();
 user2.study();
 
 //클래스의 상속
-class CleaningRobot {
-    name: string;
-    model: string;
+class CleaningRobot extends Robot {
     cleaningSchedule: string[];
-    status: string = "Active";
-    
+
     // Constructor(생성자)
+    //super로 부모가 가지고 있는 필드를 넘겨줄떄 사용한다.
     constructor(name: string, model: string, cleaningSchedule: string[]) {
-        this.name = name;
-        this.model = model;
+        super(name,model)
         this.cleaningSchedule = cleaningSchedule;
     }
 
-    // Method(행동)
-    performTask(task: string) {
-        console.log(`${this.name} is performing ${task}.`);
-    }
-    updateStatus(newStatus: string) {
-        this.status = newStatus;
-        console.log(`${this.name}'s status is now ${this.status}.`);
-    }
-
-    performCleaning() {
+    // Method(행동)  //overrid는 재정의, 오버로드는 전혀 다른 메서드가 나타나는것
+   // override performTask() {
+    performTask() {
         console.log(`${this.name} is cleaning according to the schedule: ${this.cleaningSchedule.join(", ")}.`);
     }
 }
